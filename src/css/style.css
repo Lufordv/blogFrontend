@@ -1,0 +1,1227 @@
+
+/* ESTILOS GENERALES */
+
+/* Aplicamos la normalización a todo el documento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Creamos colores desde la raiz por si en el futuro queremos cambiarlos */
+:root {
+    --marronClaro: #eddcc4;
+    --azul: #204357;
+    --hover: #ffffc7;
+    --error: #c45e5e;
+    --success: #6a8a6a;
+    --focus: #ff00cc;
+}
+
+/* Le decimos al body que por defecto ocupe todo el alto de la pantalla,
+el color de fondo que va a tener y la tipografía de base elegida */
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--marronClaro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ESTILOS PARA LOGIN Y REGISTRO */
+
+/* Establecemos donde queremos situar los formularios de login y registro
+y agregamos una imagen de fondo a las páginas */
+.fondo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../img/fondo_login.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Aplicamos estilo al contenedor de los formularios */
+.autenticacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--azul);
+    padding: 2em 3em;
+    border-radius: 5px;
+    width: 30%;
+}
+
+/* Aplicamos estilo al H1 */
+.autenticacion h1 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Aplicamos estilo a los mensajes de error que se muestran bajo los inputs */
+.autenticacion p{
+    font-size: 0.87em;
+    font-weight: 300;
+    text-align: left;
+    color: var(--error);
+}
+
+/* Decimos que la información del formulario se muestre en columna */
+.autenticacion form {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}   
+
+/* Aplicamos estilo a los campos de los formularios */
+.campo {
+    padding: 0.6em;
+    background-color: var(--azul);
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid var(--marronClaro);
+    outline: none;
+}
+
+/* Aplicamos estilo a los placeholders */
+.autenticacion input::placeholder {
+    color: var(--marronClaro);
+}
+
+/* Aplicamos estilo al boton enviar */
+.envio {
+    padding: 0.6em;
+    border: none;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+    color: var(--azul);
+    cursor: pointer;
+}
+
+/* Creamos un efecto de hover para el botón */
+.envio:hover {
+    background-color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 12px 0 var(--hover);
+}
+
+/* Aplicamos estilo al mensaje inferior del formulario */ 
+.autenticacion form span {
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.4em;
+    color: var(--marronClaro);
+}
+
+/* Aplicamos estilo al link que contiene el span */
+.autenticacion form a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 2;
+}
+
+/* Creamos un efecto de hover para que se sepa que es un link */
+.autenticacion form a:hover {
+    color: var(--hover);
+    font-weight: bold;
+}
+
+/* Le decimos al contenedor del logo que lo centre */
+.autenticacion .logo {
+    display: flex;
+    justify-content: center;
+}
+
+/* Establecemos el tamaño del logo */
+.autenticacion .logo img {
+    width: 75px;
+    margin-top: 2em;   
+}
+
+/* Aplicamos estilo al mensaje de éxito recibido del servidor */
+.success {
+    width: 25%;
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 5px;
+    background-color: var(--success);
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 20px 1px rgba(0,256,30,0.7);
+}
+
+/* Aplicamos estilo al mensaje de error que recibimos del servidor */
+.notFound {
+    width: 25%;
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 5px;
+    background-color: var(--error);
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(256,0,0,0.7);
+}
+
+
+/* ESTILOS PARA HEADER Y NAV */
+
+/* Aplicamos estilo al contenedor del header */
+.header {
+    width: 100%;
+    min-height: 15vh;
+    padding: 0.6em 0px;
+    background-color: var(--azul);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Establecemos el tamaño del logo */
+.logo img {
+    width: 120px;
+}
+
+/* Aplicamos un estilo general para los links del menú */
+.links {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Le quitamos a cada link la línea inferior y lo coloreamos de blanco */
+.link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Establecemos el tamaño y el peso de la tipografía para los h2 del menú.
+Les ponemos un borde inferior que solo se mostrará al hacer hover. */
+.link h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    border-bottom: 1px solid var(--azul);
+}
+
+/* Creamos el efecto de hover y mostramos el borde inferior de cada enlace */
+.link h2:hover {
+    color: var(--hover);
+    border-bottom: 1px solid var(--hover);
+}
+
+/* Ocultamos el botón menú para el nav responsive en la versión de escritorio */
+.nav-abrir {
+    display: none;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+    color: #fff;
+    cursor: pointer;
+}
+/* Coloreamos este botón cuando hagamos hover */
+.nav-abrir:hover {
+    color: var(--hover);
+}
+
+/* Ocultamos el botón cerrar para el nav responsive en la versión escritorio */
+.nav-cerrar {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Aplicamos estilo al contenedor usuario */
+.usuario {
+    display: flex;
+    align-items: center;
+    color: var(--marronClaro);
+    font-size: 0.75rem;
+    gap: 0.5em;
+    text-transform: capitalize
+}
+
+/* Aplicamos estilo al texto de que contiene el nombre del usuario y el logout */
+.usuario,.logout {
+    margin: 0 1em;
+    text-decoration: none;
+    color: var(--marronClaro);
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+/* Aplicamos estilo al span de crear nuevo post */
+.publicacion {
+    width: 3rem;
+    height: 3rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--azul);
+    cursor: pointer;
+}
+
+/* Establecemos el estilo sobre el span y sobre el texto interior */
+.publicacion .crear {
+    color: var(--azul);
+    text-decoration: none ;
+}
+
+/* Creamos un efecto de hover sobre el span de crear post */
+.publicacion:hover {
+    background-color: transparent;
+    font-weight: 600;
+    border: 1px solid var(--azul);
+}
+/* Al hacer hover también cambiamos el color del texto */
+.publicacion:hover .crear {
+    color: var(--hover);
+}
+
+
+/* ESTILOS PARA FOOTER */
+
+/* Establecemos estilos para el footer.
+Le decimos que ocupe todo el ancho del viewport y lo posicionamos en absoluto
+para que se muestre al final del contenido de cada página */
+.footer {
+    width: 100%;
+    height: 15vh;
+    padding: 1.25em 0;
+    position: absolute;
+    bottom: auto;
+    background-color: var(--azul);
+    display: flex;
+    justify-content: center;
+}
+
+/* Distribuimos los elementos internos del footer */
+.footer .contenedor {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Establecemos el tamaño del logo */
+.footer img {
+    width: 80px;
+}
+
+/* Le damos tamaño y color al texto */
+.footer span {
+    color: var(--marronClaro);
+    font-size: 0.75rem;
+}
+
+
+/* ESTILOS PARA LAS LISTAS DE POSTS DE LA HOME Y DE LAS PÁGINAS DE CATEGORÍAS */
+
+/* Le decimos al contenedor principal que ocupe todo el ancho del viewport */
+.inicio {
+    width: 100%;
+}
+
+/* Establecemos los márgenes del contenedor que engloba los posts y los mostramos en columna */
+.posts {
+    margin: 3em 6em 2em 6em;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+/* Ajustamos la separación entre cada post */
+.post {
+    margin-bottom: 3em;
+    display: flex;
+    gap: 100px;
+}
+
+/* Indicamos que los posts impares se muestren en el lado contrario de los pares */
+.post:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Asignamos medidas al contenedor de las imágenes de los posts */
+.img {
+    width: 60%;
+    height: 300px;
+    position: relative;
+}
+
+/* Creamos una animación para las imágenes que se dispara al entrar en la home */
+.scale-up-ver-center {
+    -webkit-animation: scale-up-ver-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+            animation: scale-up-ver-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+ @-webkit-keyframes scale-up-ver-center {
+    0% {
+      -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+  }
+  @keyframes scale-up-ver-center {
+    0% {
+      -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+  }
+
+/* Creamos un adorno por detrás de cada imagen */
+.img::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--azul);
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    z-index: -1;
+    box-shadow: 0 0 30px 2px;
+}
+
+/* Le decimos a las imágenes que ocupen todo el contenedor */
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Establecemos las medidas del contenedor que alberga el texto que acompaña la imagen */
+.contenido {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Aplicamos estilo al titulo de cada post */
+.contenido h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Aplicamos estilo al boton de leer post */
+.contenido button {
+    width: max-content;
+    padding: 1.2em 2.4em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--azul);
+    border: 1px solid var(--azul);    
+}
+
+/* Le quitamos el subrayado al link del botón */
+.contenido button a {
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+/* Creamos un efecto de hover sobre el botón */
+.contenido button:hover {
+    background-color: #326887;
+    box-shadow: 0 0 50px 10px var(--hover);
+ }
+
+
+/* ESTILOS PARA LA PÁGINA DETALLES DEL POST */
+
+/* Le decimos al contenedor principal de la página que ocupe todo el ancho del viewport */
+.postUnico {
+    width: 100%;
+    display: flex;
+    gap: 4em;
+}
+
+/* Aplicamos medidas al contenedor que alberga la información del post
+y le decimos que la muestre en columna */
+.contenidoPost {
+    margin-top: 2em;
+    margin-left: 2em;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+/* Aplicamos estilo a la imagen, pero en lugar de dejarla en cover
+la ponemos en fill para que se estire (Le da un efecto retro que me gusta para el blog) */
+.contenidoPost img {
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+}
+
+/* Damos estilo al texto */
+.contenidoPost p {
+    text-align: justify;
+    line-height: 1.6em;
+    margin-bottom: 2em;
+} 
+
+/* Resaltamos la información importante */
+.contenidoPost p span {
+    font-weight: 600;
+}
+
+/* Aplicamos estilo al contendor autor */
+.autor {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.8rem;
+}
+
+/* Aplicamos estilo a los inconos de editar y eliminar */
+.autor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Resaltamos la información del autor */
+.autor span {
+    font-weight: bold;
+}
+
+/* Mostramos los iconos en horizontal */
+.editar {
+    display: flex;
+    gap: 0.5em;
+}
+
+/* Les damos medidas a la imagenes de edición y borrado y el cursor pointer */
+.editar img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+/* ESTILOS PARA LA MODAL DE ELIMINAR POST */ 
+
+/* Aplicamos estilo sobre el contenedor que alberga la modal para posicionar la ventana */
+.modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* Le damos estilo a la modal y distribuimos sus elementos internos */
+.aviso {
+    position: fixed;
+    top: 35vh;
+    left: 35vw;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 35vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff8ee;
+    border-radius: 5px;
+}
+
+/* Posicionamos los textos de la modal */
+.texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Le damos tamaño, color y peso al texto superior de la modal */
+.texto span {
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--error);
+    text-align: center;
+}
+
+/* Le damos tamaño, color y peso al siguiente mensaje de la modal */
+.textoBorrar {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Le damos tamaño, color y peso al último mensaje de la modal */
+.textoDeshacer {
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Distribuimos los botones de la modal */
+.acciones {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Le damos estilo a los botones */
+.botonBorrar,.botonVolver {
+    width: 6em;
+    margin-top: 1em;
+    padding: 0.5em 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* Creamos un efecto de hover sobre cada botón */
+.botonBorrar:hover {
+    background-color: var(--error);
+    color: white;
+}
+
+.botonVolver:hover {
+    background-color: var(--success);
+    color: white;
+}
+
+
+/* ESTILOS PARA CREAR POST */
+
+/* Establecemos las dimensiones del contenedor principal de la página
+y le ponemos una imagen de fondo */
+.datos {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url('../img/crear-post.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Posicionamos los mensajes emergentes procedentes del servidor */
+.datos .success {
+    position: absolute;
+    height: auto;
+    top: 45%;
+    left: 35%;
+}
+
+/* Aplicamos estilo al contenedor donde redactamos/editamos el post */
+.titulo {
+    width: 40vw;
+    height: auto;
+    margin: 2em 0;
+    padding: 0 2em;
+    background-color: var(--azul);
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Aplicamos estilo a las etiquetas de los campos */
+.titulo label {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1rem;
+}
+
+/* Aplicamos estilo a los inputs */
+.titulo input {
+    height: 2em;
+    background-color: #dcdcdc;
+    border: 1px solid white;
+}
+
+/* Creamos un efecto de resaltado al seleccionar cada input */
+.titulo input[type='text']:focus-within {
+    background-color: #fff;
+    box-shadow: 0 0 12px 0 var(--hover);
+    outline: none;
+}
+
+/* Establecemos medidas específicas para el campo textArea */
+.titulo textarea {
+    margin-bottom: 2em;
+    height: 20vh;
+    background-color: #dcdcdc;
+    border: 1px solid white;
+}
+
+/* Resaltamos el campo textArea al ser seleccionado */
+.titulo textarea:focus-within {
+    background-color: #fff;
+    box-shadow: 0 0 12px 0 var(--hover);
+    outline: none;
+}
+
+/*Aplicamos estilo al contenedor de subir las imágenes */
+.subidaImagen {
+    margin-top: 0.5em;
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
+}
+
+/* Aplicamos estilo al input file */
+.subidaImagen input[type='file'] {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+/* Establecemos las dimensiones del contenedor de la imagen que cargamos */
+.imagenPost {
+    margin: 2em 0;
+    max-height: 5vh;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Le damos dimensiones a la miniatura de la imagen */
+.imagenPost img {
+    width: 90px;
+    object-fit: cover;
+}
+
+/* Aplicamos estilo a los botones del formulario */
+.titulo button {
+    width: 6em;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+    color: var(--azul);
+    cursor: pointer;
+}
+
+/* Aplicamos estilo al botón del contenedor de la imagen */
+.imagenPost button {
+    margin: 1em;
+    width: 10em;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+    color: var(--azul);
+    cursor: pointer;
+}
+
+/* Creamos un efecto de hover sobre los botones */
+.titulo button:hover {
+    background-color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 12px 0 var(--hover);
+}
+
+/* Aplicamos estilo al contendor donde seleccionamos la categoría del post */
+.item {
+    width: 20em;
+    height: auto;
+    margin: 2em 0;
+    margin-left: 2em;
+    padding: 2em 3em;
+    background-color: var(--azul);
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Aplicamos estilo al H3 */
+.item h3 {
+    font-size: 1.5em;
+    border-bottom: 1px solid white;
+}
+
+/* Le ponemos el cursor pointer a los inputs radio */
+.item input {
+    cursor: pointer;
+}
+
+/* Resaltamos el input seleccionado */
+.item input:checked + label {
+    font-weight: bold;
+    color: var(--hover);
+}
+
+/* Aplicamos estilo al texto de cada categoría */
+.item .cat label {
+    font-size: 0.9rem;
+    margin-left: 1em;
+}
+
+
+/* ESTILOS PARA LOGOUT */
+
+/* Agregamos una imagen de fondo a la página y posicionamos la ventana de aviso */
+.salir {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/Cerrar-sesion.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+}
+
+/* Aplicamos estilo a la ventana y distribuimos los elementos internos centrados y en columna */
+.confirmar {
+    background-color: var(--azul);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+/* Definimos el tamaño y el color del texto */
+.confirmar span {
+    margin-bottom: 1em;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Le damos tamaño y márgenes a los botones.
+Les quitamos el borde exterior y redondeamos las esquinas */
+.confirmar button {
+    width: 6em;
+    height: 3em;
+    margin: 2em;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Aplicamos estilo a la tipografía de los botones */
+.si,.no{
+    color: #ffffff;
+    font-size: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Establemos el color de fondo de cada boton */
+.si {
+    background-color: #812f2f;
+}
+
+.no {
+    background-color: #356c35;
+}
+
+/* Generamos un efecto de hover sobre cada botón */
+.si:hover,.no:hover {
+    box-shadow: 0 0 60px 0 var(--hover);
+}
+
+
+/*--------- DISEÑO RESPONSIVE--------- */
+
+/* Media Query para dispositivos hasta 1024 pixeles */
+@media (max-width: 1024px) {
+
+    /* LOGIN Y REGISTRO */
+
+    .autenticacion {
+        width: 45%;
+    }
+
+    .notFound {
+        width: 40%;
+        padding: 1em 0.5em;
+    }
+
+    .success {
+        width: 40%;
+        padding: 1em 0.5em;
+    }
+
+    /* NAV RESPONSIVE */
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-left: 1em;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--azul);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        transform: translateX(-100%);
+        transition: 1s ease all;
+    }
+
+    .desplegado {
+        transform: translateX(0);
+    }
+
+    .links {
+       display: flex;
+       flex-direction: column;
+       gap: 32px;
+    }
+
+    .nav-cerrar {
+        display: block;
+    }
+
+    .nav-abrir {
+        display: block;
+    }
+
+    /* LISTAS DE POST */
+
+    .posts {
+        margin: 2em 3em 2em 3em;
+        gap: 100px;
+    }
+
+    .post {
+        margin-bottom: 3em;
+        gap: 60px;
+    }
+
+    .img {
+        width: 60%;
+        position: relative;
+    }
+
+    .contenido {
+       width: 40%;
+    }
+
+    .contenido h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .contenido h3 {
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .contenido button {
+        padding: 1em 1.5em;  
+    }
+
+    /* DETALLES DEL POST */
+
+    .postUnico {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        }
+
+    .contenidoPost {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .contenidoPost h2 {
+        width: 94%;
+        text-align: center;
+    }
+
+    .contenidoPost img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .contenidoPost p {
+        width: 70%;
+    } 
+
+    .autor img {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* MODAL DE ELIMINAR POST */
+
+    .aviso {
+        left: 27vw;
+        width: 45vw;
+    }
+
+    .acciones {
+        justify-content: space-around;
+    }
+
+    /* CREAR-EDITAR POSTS */
+
+    .datos {
+        padding: 0 1em;
+    }
+
+    .titulo {
+        width: 60%;
+    }
+
+    .item {
+        width: 40%;
+        padding: 2em 2em;
+    }
+    
+    .item h3 {
+        font-size: 1.5em;
+        border-bottom: 1px solid white;
+    }
+    
+    .item input {
+        cursor: pointer;
+    }
+    
+    .item input:checked + label {
+        font-weight: bold;
+        color: var(--hover);
+    }
+    
+    .item .cat label {
+        font-size: 0.9rem;
+        margin-left: 1em;
+    }
+
+    .datos .success {
+        position: absolute;
+        height: auto;
+        top: 35%;
+        left: 25%;
+    }
+}
+
+/* Media Query para dispositivos hasta 650 pixeles */
+@media (max-width: 650px) {
+
+    /* LOGIN Y REGISTR0 */
+
+    .autenticacion {
+        width: 65%;
+        padding: 1.5em;
+    }
+
+    .notFound {
+        width: 55%;
+        padding: 1em 0.5em;
+        font-size: 0.87rem;
+    }
+
+    .success {
+        width: 55%;
+        padding: 1em 0.5em;
+        font-size: 0.87rem;
+    }
+
+    /* HEADER */
+
+    .header {
+        padding: 16px 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* LISTAS DE POSTS */
+
+    .posts {
+        margin: 2em 1em 2em 1em;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .post:nth-child(odd) {
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1em;
+        gap: 40px;
+    }
+
+    .post:nth-child(even) {
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1em;
+        gap: 40px;
+    }
+
+    .img {
+        width: 66vw;
+        height: 250px;
+        position: relative;
+    }
+
+    .img img {
+        object-fit: cover;
+    }
+
+    .contenido {
+        min-width: 100%;
+        gap: 8px;
+    }
+
+    .contenido h2 {
+        font-size: 1.25em;
+        text-align: center;
+    }
+
+    .contenido button {
+        padding: 0.5em 1.5em;  
+    }
+
+    /* DETALLES DEL POST */
+
+    .contenidoPost p {
+        width: 94%;
+    }
+
+    .contenidoPost img {
+        object-fit: cover;
+    }
+
+    /* MODAL DE ELIMINAR POST */
+
+    .aviso {
+        left: 13vw;
+        width: 70vw;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    .texto span {
+        font-size: 1.25rem;
+    }
+
+    .textoBorrar {
+        font-size: 1rem;
+    }
+
+    .textoDeshacer {
+        font-size: 0.75rem;
+    }
+
+    .acciones {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .botonBorrar,.botonVolver {
+        width: 5em;
+    }
+
+    /* CREAR-EDITAR POSTS */
+
+    .datos {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo {
+        width: 94%;
+    }
+
+    .item {
+        width: 94%;
+        margin: 0;
+        margin-bottom: 1em;
+        gap: 16px;
+    }
+
+    .datos .success {
+        position: absolute;
+        height: auto;
+        top: 35%;
+        left: 20%;
+    }
+
+    /* LOGOUT */
+
+    .confirmar {
+        width: 70%;
+        padding: 2em 1em;
+    }
+
+    .confirmar span {
+        margin-bottom: 1em;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+
+    .confirmar button {
+        width: 5em;
+        height: 2.5em;
+        margin: 1em 0.5em;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+    
+    
+    
+    
