@@ -58,7 +58,7 @@ function PostDetalles() {
             {modalAbierto && <Modal cierraModal={toggleModal} />}
             <div className='contenidoPost'>
                 {/*Renderiza la imagen del post si existe */}
-                {post.imagen && <img src={`https://blogbackend1-0nyy.onrender.com${post.imagen}`} alt={post.titulo} />}
+                {post.imagen && <img className='portada' src={`https://blogbackend1-0nyy.onrender.com${post.imagen}`} alt={post.titulo} />}
                 <div className='autor'>
                     <div className='info'>
                         {/* Muestra el nombre del autor */}
